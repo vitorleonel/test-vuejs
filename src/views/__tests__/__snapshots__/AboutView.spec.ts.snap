@@ -14,6 +14,11 @@ exports[`AboutView > should render properly 1`] = `
       class="container"
       data-v-51353816=""
     >
+      <h1
+        data-v-51353816=""
+      >
+        BestBuy
+      </h1>
       <nav
         data-v-51353816=""
       >

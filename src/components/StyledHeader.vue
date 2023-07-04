@@ -7,6 +7,8 @@ export default defineComponent({})
 <template>
   <header class="header">
     <div class="container">
+      <h1>BestBuy</h1>
+
       <nav>
         <router-link to="/">Home</router-link>
         <router-link to="/shop">Shop</router-link>
@@ -31,7 +33,13 @@ export default defineComponent({})
   .container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 32px;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-transform: lowercase;
   }
 
   nav {
