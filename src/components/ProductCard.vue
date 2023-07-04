@@ -23,7 +23,7 @@ export default {
     formatedPrice() {
       return formatPrice(this.product.salePrice)
     },
-    formatedImage() {
+    parsedImage() {
       return this.product.image || '/images/default-product.png'
     }
   },
@@ -40,7 +40,7 @@ export default {
 
 <template>
   <div class="product">
-    <img class="product__image" :src="formatedImage" :alt="product.name" />
+    <img class="product__image" :src="parsedImage" :alt="product.name" />
     <h3 class="product__name">{{ product.name }}</h3>
     <span
       :class="{
