@@ -5,13 +5,18 @@ type IProductShippingLevelsOfService = {
 }
 
 export type IProduct = {
-  genre: string
+  genre: string | null
   image: string | null
   name: string
   onSale: boolean
-  plot: string
+  plot: string | null
   salePrice: number
   shippingLevelsOfService: IProductShippingLevelsOfService[]
   sku: number
   startDate: string
 }
+
+export type IAPIGetAllProduct = Pick<
+  IProduct,
+  'sku' | 'name' | 'salePrice' | 'image' | 'startDate' | 'onSale'
+>

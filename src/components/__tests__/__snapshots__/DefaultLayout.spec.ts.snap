@@ -8,6 +8,7 @@ exports[`DefaultLayout > should render properly 1`] = `
   <header
     class="header"
     data-v-51353816=""
+    data-v-81cf18a8=""
   >
     <div
       class="container"
@@ -16,35 +17,36 @@ exports[`DefaultLayout > should render properly 1`] = `
       <nav
         data-v-51353816=""
       >
-        <routerlink
+        <router-link
           data-v-51353816=""
           to="/"
         >
           Home
-        </routerlink>
-        <routerlink
+        </router-link>
+        <router-link
           data-v-51353816=""
           to="/shop"
         >
           Shop
-        </routerlink>
-        <routerlink
+        </router-link>
+        <router-link
           data-v-51353816=""
           to="/about"
         >
           About us
-        </routerlink>
+        </router-link>
       </nav>
     </div>
   </header>
-  <main>
+  <main
+    data-v-81cf18a8=""
+  >
     
     <p>
       Test content
     </p>
     
   </main>
-  <styledfooter />
   
 </div>
 `;

@@ -28,7 +28,7 @@ export default defineComponent({
 
 <template>
   <DefaultLayout>
-    <div class="home container">
+    <section class="home container">
       <img
         class="home__banner"
         src="@/assets/home-banner.png"
@@ -47,15 +47,12 @@ export default defineComponent({
           <span>{{ category.description }}</span>
         </RouterLink>
       </nav>
-    </div>
+    </section>
   </DefaultLayout>
 </template>
 
 <style lang="scss" scoped>
 .home {
-  padding-top: 32px;
-  padding-bottom: 32px;
-
   &__banner {
     min-height: 208px;
     object-fit: cover;
@@ -72,6 +69,7 @@ export default defineComponent({
   }
 
   &__category {
+    border: 1px solid var(--light-gray-color);
     background-color: var(--white-color);
     padding: 12px 16px;
     border-radius: var(--border-radius);

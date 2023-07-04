@@ -6,6 +6,7 @@
   --primary-color-darker: #16a34a;
   --dark-color: #0f172a;
   --gray-color: #64748b;
+  --light-gray-color: #e2e8f0;
   --white-color: #ffffff;
   --danger-color: #dc2626;
   --warning-color: #eab308;
@@ -22,22 +23,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html,
-body,
-#app {
-  height: 100%;
-}
-
 body {
   font-family: 'Noto Sans', sans-serif;
   font-size: 100%;
   background-color: var(--background-color);
   color: var(--dark-color);
-}
-
-#app {
-  display: flex;
-  flex-direction: column;
 }
 
 a {

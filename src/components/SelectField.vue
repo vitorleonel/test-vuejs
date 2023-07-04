@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent, type PropType } from 'vue'
 
-type ISelectOption = {
+export type ISelectOption = {
   label: string
   value: number | string
 }
@@ -38,8 +38,9 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .select {
+  height: 40px;
   border: 1px solid transparent;
-  padding: 8px 12px;
+  padding: 0 12px;
   border-radius: var(--border-radius);
   background-color: var(--white-color);
   color: var(--dark-color);

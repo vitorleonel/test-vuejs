@@ -17,4 +17,4 @@ instance.interceptors.request.use(
   (error) => Promise.reject(error)
 )
 
-export default axios
+export default instance

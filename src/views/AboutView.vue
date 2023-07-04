@@ -97,9 +97,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .about {
-  padding-top: 32px;
-  padding-bottom: 32px;
-
   &__title {
     margin-bottom: 16px;
   }

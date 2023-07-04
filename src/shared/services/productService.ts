@@ -1,16 +1,11 @@
 import HTTPService from '@/shared/services/httpService'
-import type { IProduct } from '@/shared/interfaces/product'
+import type { IProduct, IAPIGetAllProduct } from '@/shared/interfaces/product'
 
-type IGetAllProduct = Pick<
-  IProduct,
-  'sku' | 'name' | 'salePrice' | 'image' | 'startDate' | 'onSale'
->
-
-const getAll = async (params: Record<string, unknown>): Promise<IGetAllProduct[]> => {
+const getAll = async (params: Record<string, unknown>): Promise<IAPIGetAllProduct[]> => {
   const {
     data: { products }
   } = await HTTPService.get<{
-    products: IGetAllProduct[]
+    products: IAPIGetAllProduct[]
   }>('/products', {
     params
   })

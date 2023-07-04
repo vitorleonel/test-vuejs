@@ -25,8 +25,10 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .input {
+  height: 40px;
   border: 1px solid transparent;
-  padding: 8px 12px;
+  font-size: 16px;
+  padding: 0 12px;
   border-radius: var(--border-radius);
   background-color: var(--white-color);
   color: var(--dark-color);

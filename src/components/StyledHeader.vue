@@ -2,9 +2,9 @@
   <header class="header">
     <div class="container">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/shop">Shop</RouterLink>
-        <RouterLink to="/about">About us</RouterLink>
+        <router-link to="/">Home</router-link>
+        <router-link to="/shop">Shop</router-link>
+        <router-link to="/about">About us</router-link>
       </nav>
     </div>
   </header>
@@ -20,6 +20,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   position: sticky;
   top: 0;
+  z-index: 10;
 
   .container {
     display: flex;

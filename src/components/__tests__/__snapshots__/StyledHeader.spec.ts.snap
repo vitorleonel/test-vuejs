@@ -12,24 +12,24 @@ exports[`StyledHeader > should render properly 1`] = `
     <nav
       data-v-51353816=""
     >
-      <routerlink
+      <router-link
         data-v-51353816=""
         to="/"
       >
         Home
-      </routerlink>
-      <routerlink
+      </router-link>
+      <router-link
         data-v-51353816=""
         to="/shop"
       >
         Shop
-      </routerlink>
-      <routerlink
+      </router-link>
+      <router-link
         data-v-51353816=""
         to="/about"
       >
         About us
-      </routerlink>
+      </router-link>
     </nav>
   </div>
 </header>

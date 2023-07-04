@@ -14,6 +14,11 @@ export default {
   <main>
     <slot></slot>
   </main>
-
-  <StyledFooter />
 </template>
+
+<style lang="scss" scoped>
+main {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+</style>
