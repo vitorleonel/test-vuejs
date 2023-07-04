@@ -98,11 +98,7 @@ export default {
           placeholder="Write the product name"
         />
 
-        <div
-          v-show="!isEditingName"
-          @click="isEditingName = true"
-          class="product-modal__name-action"
-        >
+        <div v-if="!isEditingName" @click="isEditingName = true" class="product-modal__name-action">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -121,7 +117,7 @@ export default {
           <span>Edit</span>
         </div>
 
-        <div v-show="isEditingName" @click="handleSaveNewName" class="product-modal__name-action">
+        <div v-if="isEditingName" @click="handleSaveNewName" class="product-modal__name-action">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
