@@ -1,30 +1,106 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import StyledButton from '@/components/StyledButton.vue'
-import InputField from '@/components/InputField.vue'
-import SelectField from '@/components/SelectField.vue'
-
-import ProductService from '@/shared/services/productService'
+import DefaultLayout from '@/components/DefaultLayout.vue'
 
 export default defineComponent({
-  components: { StyledButton, InputField, SelectField },
-  mounted() {
-    ProductService.getBySku(27358169).then(console.log)
+  components: { DefaultLayout },
+  data() {
+    return {
+      categories: [
+        { id: 1, label: 'Clothes', description: 'The best clothes you can find on the internet' },
+        { id: 2, label: 'Electronics', description: 'Exclusive prices on all kind of electronics' },
+        {
+          id: 3,
+          label: 'Automotive',
+          description: 'Everything you need for your car at a great price'
+        },
+        {
+          id: 4,
+          label: 'Personal care',
+          description: 'Take care of yourself and on people you love'
+        }
+      ]
+    }
   }
 })
 </script>
 
 <template>
-  <StyledButton text="My Button" variant="default" />
-  <InputField />
-  <SelectField
-    :options="[
-      { value: 1, label: 'Option 1' },
-      { value: 2, label: 'Option 2' },
-      { value: 3, label: 'Option 3' },
-      { value: 4, label: 'Option 4' },
-      { value: 5, label: 'Option 5' }
-    ]"
-  />
+  <DefaultLayout>
+    <div class="home container">
+      <img class="home__banner" src="@/assets/home-banner.png" alt="Everything you need" />
+
+      <nav class="home__categories">
+        <RouterLink
+          class="home__category"
+          to="/shop"
+          v-for="category in categories"
+          :key="category.id"
+        >
+          <h3>{{ category.label }}</h3>
+          <span>{{ category.description }}</span>
+        </RouterLink>
+      </nav>
+    </div>
+  </DefaultLayout>
 </template>
+
+<style lang="scss" scoped>
+.home {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  &__banner {
+    min-height: 208px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__categories {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  &__category {
+    background-color: var(--white-color);
+    padding: 12px 16px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+
+    &:hover {
+      text-decoration: none;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: bold;
+      color: initial;
+    }
+
+    span {
+      font-size: 12px;
+      color: var(--gray-color);
+    }
+  }
+
+  @media only screen and (min-width: 640px) {
+    &__categories {
+      margin-top: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    &__categories {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+</style>

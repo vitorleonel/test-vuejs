@@ -1,0 +1,129 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HomeView > should render properly 1`] = `
+<div
+  data-v-app=""
+>
+  
+  <header
+    class="header"
+    data-v-51353816=""
+  >
+    <div
+      class="container"
+      data-v-51353816=""
+    >
+      <nav
+        data-v-51353816=""
+      >
+        <routerlink
+          data-v-51353816=""
+          to="/"
+        >
+          Home
+        </routerlink>
+        <routerlink
+          data-v-51353816=""
+          to="/shop"
+        >
+          Shop
+        </routerlink>
+        <routerlink
+          data-v-51353816=""
+          to="/about"
+        >
+          About us
+        </routerlink>
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+    <div
+      class="home container"
+      data-v-b4e148ca=""
+    >
+      <img
+        alt="Everything you need"
+        class="home__banner"
+        data-v-b4e148ca=""
+        src="/src/assets/home-banner.png"
+      />
+      <nav
+        class="home__categories"
+        data-v-b4e148ca=""
+      >
+        
+        <routerlink
+          class="home__category"
+          data-v-b4e148ca=""
+          to="/shop"
+        >
+          <h3
+            data-v-b4e148ca=""
+          >
+            Clothes
+          </h3>
+          <span
+            data-v-b4e148ca=""
+          >
+            The best clothes you can find on the internet
+          </span>
+        </routerlink>
+        <routerlink
+          class="home__category"
+          data-v-b4e148ca=""
+          to="/shop"
+        >
+          <h3
+            data-v-b4e148ca=""
+          >
+            Electronics
+          </h3>
+          <span
+            data-v-b4e148ca=""
+          >
+            Exclusive prices on all kind of electronics
+          </span>
+        </routerlink>
+        <routerlink
+          class="home__category"
+          data-v-b4e148ca=""
+          to="/shop"
+        >
+          <h3
+            data-v-b4e148ca=""
+          >
+            Automotive
+          </h3>
+          <span
+            data-v-b4e148ca=""
+          >
+            Everything you need for your car at a great price
+          </span>
+        </routerlink>
+        <routerlink
+          class="home__category"
+          data-v-b4e148ca=""
+          to="/shop"
+        >
+          <h3
+            data-v-b4e148ca=""
+          >
+            Personal care
+          </h3>
+          <span
+            data-v-b4e148ca=""
+          >
+            Take care of yourself and on people you love
+          </span>
+        </routerlink>
+        
+      </nav>
+    </div>
+    
+  </main>
+  <styledfooter />
+  
+</div>
+`;
