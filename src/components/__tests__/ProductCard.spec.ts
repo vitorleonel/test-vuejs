@@ -5,7 +5,7 @@ import ProductCard from '@/components/ProductCard.vue'
 
 import { formatPrice } from '@/shared/utils/format'
 import type { IProductCard } from '@/shared/interfaces/product'
-import { testProduct } from '@/shared/mocks/product'
+import { testProduct } from '@/shared/mocks/productMock'
 
 describe('ProductCard', () => {
   let mockOnSelect: (product: IProductCard) => void

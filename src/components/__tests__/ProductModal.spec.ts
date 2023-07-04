@@ -2,7 +2,7 @@ import { mount, type VueWrapper } from '@vue/test-utils'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import ProductModal from '@/components/ProductModal.vue'
-import { testFullProduct } from '@/shared/mocks/product'
+import { testFullProduct } from '@/shared/mocks/productMock'
 import { formatPrice } from '@/shared/utils/format'
 
 describe('ProductModal', () => {
