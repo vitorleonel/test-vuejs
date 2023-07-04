@@ -45,11 +45,6 @@ export default {
   },
   mounted() {
     this.productName = this.product.name
-
-    window.addEventListener('click', this.handleClickOutside)
-  },
-  unmounted() {
-    window.removeEventListener('click', this.handleClickOutside)
   },
   computed: {
     formattedPlot(): string | null {
@@ -81,12 +76,6 @@ export default {
       this.onClose()
     },
 
-    handleClickOutside(event: MouseEvent) {
-      if (!(this.$refs.content as HTMLDivElement).contains(event.target as Node)) {
-        this.handleOnClose()
-      }
-    },
-
     formatPrice(price: number): string {
       return formatPrice(price)
     }
@@ -96,7 +85,9 @@ export default {
 
 <template>
   <div class="product-modal">
-    <div ref="content" class="product-modal__content">
+    <div class="product-modal__overlay" @click="handleOnClose"></div>
+
+    <div class="product-modal__content">
       <div class="product-modal__header">
         <h3 v-show="!isEditingName" class="product-modal__name">{{ productName }}</h3>
 
@@ -198,7 +189,6 @@ export default {
 .product-modal {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
   padding: 16px;
   display: flex;
   justify-content: center;
@@ -207,6 +197,13 @@ export default {
   top: 0;
   left: 0;
   z-index: 10;
+
+  &__overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+  }
 
   &__content {
     width: 100%;
@@ -217,6 +214,7 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    z-index: 10;
   }
 
   &__header {

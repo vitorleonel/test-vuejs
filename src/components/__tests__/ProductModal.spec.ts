@@ -108,13 +108,19 @@ describe('ProductModal', () => {
     expect(customWrapper.find('.product-modal__plot-toggle').exists()).toBeFalsy()
   })
 
-  it('should call "onPrevious" when click on delete button', () => {
+  it('should call "onClose" when clicking outside the content', () => {
+    wrapper.find('.product-modal__overlay').trigger('click')
+
+    expect(mockOnClose).toHaveBeenCalledOnce()
+  })
+
+  it('should call "onPrevious" when clicking on delete button', () => {
     wrapper.find('.product-modal__previous').trigger('click')
 
     expect(mockOnPrevious).toHaveBeenCalledOnce()
   })
 
-  it('should call "onNext" when click on delete button', () => {
+  it('should call "onNext" when clicking on delete button', () => {
     wrapper.find('.product-modal__next').trigger('click')
 
     expect(mockOnNext).toHaveBeenCalledOnce()
