@@ -1,7 +1,7 @@
 <script lang="ts">
 import { defineComponent, type PropType } from 'vue'
 
-interface ISelectOption {
+type ISelectOption = {
   label: string
   value: number | string
 }

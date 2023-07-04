@@ -20,7 +20,7 @@ export default {
     }
   },
   computed: {
-    formatedPrice() {
+    formattedPrice() {
       return formatPrice(this.product.salePrice)
     },
     parsedImage() {
@@ -48,7 +48,7 @@ export default {
         'product__price--green': product.salePrice < 15,
         'product__price--red': product.salePrice > 50
       }"
-      >{{ formatedPrice }}</span
+      >{{ formattedPrice }}</span
     >
     <span class="product__sale" v-if="product.onSale">Sale</span>
 

@@ -2,18 +2,10 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { VueWrapper, mount } from '@vue/test-utils'
 
 import ProductCard from '@/components/ProductCard.vue'
+
 import { formatPrice } from '@/shared/utils/format'
 import type { IProductCard } from '@/shared/interfaces/product'
-
-const testProduct: IProductCard = {
-  sku: 2737435,
-  name: 'Metra - Turbokits Aftermarket Radio Wire Harness Adapter for Select Honda/Isuzu Vehicles - White',
-  salePrice: 16.99,
-  image:
-    'https://pisces.bbystatic.com/prescaled/500/500/image2/BestBuy_US/images/products/2737/2737435_ra.jpg',
-  startDate: '2007-07-23',
-  onSale: false
-}
+import { testProduct } from '@/shared/mocks/product'
 
 describe('ProductCard', () => {
   let mockOnSelect: (product: IProductCard) => void

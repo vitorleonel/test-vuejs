@@ -1,8 +1,7 @@
-export type IProductShipping = {
-  ground: number
-  nextDay: number
-  secondDay: number
-  vendorDelivery: string
+type IProductShippingLevelsOfService = {
+  serviceLevelId: number
+  serviceLevelName: string
+  unitShippingPrice: number
 }
 
 export type IProduct = {
@@ -12,9 +11,9 @@ export type IProduct = {
   onSale: boolean
   plot: string
   salePrice: number
-  shipping: IProductShipping[]
+  shippingLevelsOfService: IProductShippingLevelsOfService[]
   sku: number
   startDate: string
 }
 
-export type IProductCard = Omit<IProduct, 'genre' | 'plot' | 'shipping'>
+export type IProductCard = Omit<IProduct, 'genre' | 'plot' | 'shippingLevelsOfService'>
