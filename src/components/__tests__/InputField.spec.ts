@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest'
 import { VueWrapper, mount } from '@vue/test-utils'
 
-import Input from '@/components/Input.vue'
+import InputField from '@/components/InputField.vue'
 
-describe('Input', () => {
+describe('InputField', () => {
   it('should update the v-model property when the value is filled', async () => {
-    const wrapper: VueWrapper = mount(Input, {
+    const wrapper: VueWrapper = mount(InputField, {
       props: {
         'onUpdate:modelValue': (event) => wrapper.setProps({ modelValue: event })
       }

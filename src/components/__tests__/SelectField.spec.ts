@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest'
 import { VueWrapper, mount } from '@vue/test-utils'
 
-import Select from '@/components/Select.vue'
+import SelectField from '@/components/SelectField.vue'
 
-describe('Select', () => {
+describe('SelectField', () => {
   it('should update the v-model property when the option is selected', async () => {
     const selectOptions = [
       { value: 1, label: 'Option 1' },
@@ -13,7 +13,7 @@ describe('Select', () => {
       { value: 5, label: 'Option 5' }
     ]
 
-    const wrapper: VueWrapper = mount(Select, {
+    const wrapper: VueWrapper = mount(SelectField, {
       props: {
         'onUpdate:modelValue': (event) => wrapper.setProps({ modelValue: event }),
         options: selectOptions

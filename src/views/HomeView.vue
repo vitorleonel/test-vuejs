@@ -1,19 +1,19 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import SButton from '@/components/SButton.vue'
-import SInput from '@/components/SInput.vue'
-import SSelect from '@/components/SSelect.vue'
+import StyledButton from '@/components/StyledButton.vue'
+import InputField from '@/components/InputField.vue'
+import SelectField from '@/components/SelectField.vue'
 
 export default defineComponent({
-  components: { SButton, SInput, SSelect }
+  components: { StyledButton, InputField, SelectField }
 })
 </script>
 
 <template>
-  <SButton text="My Button" variant="default" />
-  <SInput />
-  <SSelect
+  <StyledButton text="My Button" variant="default" />
+  <InputField />
+  <SelectField
     :options="[
       { value: 1, label: 'Option 1' },
       { value: 2, label: 'Option 2' },
