@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  VITE_BESTBUY_API_URL: ${{ vars.VITE_BESTBUY_API_URL }}
+  VITE_BESTBUY_API_KEY: ${{ vars.VITE_BESTBUY_API_KEY }}
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
