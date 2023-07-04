@@ -4,12 +4,12 @@ import { VueWrapper, mount } from '@vue/test-utils'
 import ProductCard from '@/components/ProductCard.vue'
 
 import { formatPrice } from '@/shared/utils/format'
-import type { IProduct } from '@/shared/interfaces/product'
+import type { IAPIGetAllProduct } from '@/shared/interfaces/product'
 import { testProduct } from '@/shared/mocks/productMock'
 
 describe('ProductCard', () => {
-  let mockOnSelect: (product: IProduct) => void
-  let mockOnDelete: (product: IProduct) => void
+  let mockOnSelect: (product: IAPIGetAllProduct) => void
+  let mockOnDelete: (product: IAPIGetAllProduct) => void
 
   beforeEach(() => {
     mockOnSelect = vi.fn(() => {})
