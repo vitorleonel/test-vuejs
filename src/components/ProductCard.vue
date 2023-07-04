@@ -2,21 +2,21 @@
 import type { PropType } from 'vue'
 
 import { formatPrice } from '@/shared/utils/format'
-import type { IProductCard } from '@/shared/interfaces/product'
+import type { IProduct } from '@/shared/interfaces/product'
 
 export default {
   props: {
     product: {
       required: true,
-      type: Object as PropType<IProductCard>
+      type: Object as PropType<IProduct>
     },
     onSelect: {
       required: true,
-      type: Function as PropType<(product: IProductCard) => void>
+      type: Function as PropType<(product: IProduct) => void>
     },
     onDelete: {
       required: true,
-      type: Function as PropType<(product: IProductCard) => void>
+      type: Function as PropType<(product: IProduct) => void>
     }
   },
   computed: {

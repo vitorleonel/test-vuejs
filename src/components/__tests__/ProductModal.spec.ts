@@ -2,7 +2,7 @@ import { mount, type VueWrapper } from '@vue/test-utils'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import ProductModal from '@/components/ProductModal.vue'
-import { testFullProduct } from '@/shared/mocks/productMock'
+import { testProduct } from '@/shared/mocks/productMock'
 import { formatPrice } from '@/shared/utils/format'
 
 describe('ProductModal', () => {
@@ -15,15 +15,15 @@ describe('ProductModal', () => {
     mockOnNext = vi.fn(() => {})
 
     wrapper = mount(ProductModal, {
-      props: { product: testFullProduct, onPrevious: mockOnPrevious, onNext: mockOnNext }
+      props: { product: testProduct, onPrevious: mockOnPrevious, onNext: mockOnNext }
     })
   })
 
   it('should render properly', () => {
-    const formattedPlot = `${testFullProduct.plot.slice(0, 70)}...`
+    const formattedPlot = `${testProduct.plot.slice(0, 70)}...`
 
-    expect(wrapper.find('.product__name').text()).toBe(testFullProduct.name)
-    expect(wrapper.find('.product__genre').text()).toBe(testFullProduct.genre)
+    expect(wrapper.find('.product__name').text()).toBe(testProduct.name)
+    expect(wrapper.find('.product__genre').text()).toBe(testProduct.genre)
     expect(wrapper.find('.product__plot').text()).toBe(formattedPlot)
   })
 
@@ -34,7 +34,7 @@ describe('ProductModal', () => {
 
     await wrapper.find('.product__plot-toggle').trigger('click')
 
-    expect(wrapper.find('.product__plot').text().length).toBe(testFullProduct.plot.length)
+    expect(wrapper.find('.product__plot').text().length).toBe(testProduct.plot.length)
 
     await wrapper.find('.product__plot-toggle').trigger('click')
 
@@ -44,13 +44,13 @@ describe('ProductModal', () => {
   it('should render shipping options properly', async () => {
     const shippingOptions = wrapper.findAll('.product__shipping')
 
-    for (let index = 0; index < testFullProduct.shippingLevelsOfService.length; index++) {
+    for (let index = 0; index < testProduct.shippingLevelsOfService.length; index++) {
       expect(shippingOptions[index].find('.product__shipping_name').text()).toBe(
-        testFullProduct.shippingLevelsOfService[index].serviceLevelName
+        testProduct.shippingLevelsOfService[index].serviceLevelName
       )
 
       expect(shippingOptions[index].find('.product__shipping_price').text()).toBe(
-        formatPrice(testFullProduct.shippingLevelsOfService[index].unitShippingPrice)
+        formatPrice(testProduct.shippingLevelsOfService[index].unitShippingPrice)
       )
     }
   })
@@ -58,7 +58,7 @@ describe('ProductModal', () => {
   it('should not render shipping options when there is no option', () => {
     const customWrapper: VueWrapper = mount(ProductModal, {
       props: {
-        product: { ...testFullProduct, shippingLevelsOfService: [] },
+        product: { ...testProduct, shippingLevelsOfService: [] },
         onPrevious: mockOnPrevious,
         onNext: mockOnNext
       }

@@ -5,8 +5,13 @@ import StyledButton from '@/components/StyledButton.vue'
 import InputField from '@/components/InputField.vue'
 import SelectField from '@/components/SelectField.vue'
 
+import ProductService from '@/shared/services/productService'
+
 export default defineComponent({
-  components: { StyledButton, InputField, SelectField }
+  components: { StyledButton, InputField, SelectField },
+  mounted() {
+    ProductService.getBySku(27358169).then(console.log)
+  }
 })
 </script>
 

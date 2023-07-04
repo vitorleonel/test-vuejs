@@ -15,5 +15,3 @@ export type IProduct = {
   sku: number
   startDate: string
 }
-
-export type IProductCard = Omit<IProduct, 'genre' | 'plot' | 'shippingLevelsOfService'>
