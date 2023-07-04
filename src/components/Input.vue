@@ -1,13 +1,13 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, type PropType } from 'vue'
 
 export default defineComponent({
+  name: 'InputField',
   props: {
     modelValue: String,
     variant: {
-      type: String,
-      default: 'default',
-      validator: (value: string) => ['default', 'danger', 'warning'].includes(value)
+      type: String as PropType<'default' | 'danger' | 'warning'>,
+      default: 'default'
     }
   },
   emits: {

@@ -1,24 +1,22 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, type PropType } from 'vue'
 
-interface ISelectOptions {
+interface ISelectOption {
   label: string
   value: number | string
 }
 
 export default defineComponent({
+  name: 'SelectField',
   props: {
     modelValue: String,
     options: {
       required: true,
-      type: Array,
-      validator: (options: ISelectOptions[]) =>
-        options.every((option) => option.value && option.label)
+      type: Array as PropType<ISelectOption[]>
     },
     variant: {
-      type: String,
-      default: 'default',
-      validator: (value: string) => ['default', 'danger', 'warning'].includes(value)
+      type: String as PropType<'default' | 'danger' | 'warning'>,
+      default: 'default'
     }
   },
   emits: {
@@ -33,11 +31,7 @@ export default defineComponent({
     :value="modelValue"
     @input="$emit('update:modelValue', ($event.target as HTMLSelectElement).value)"
   >
-    <option
-      v-for="(option, index) in (options as ISelectOptions[])"
-      :key="index"
-      :value="option.value"
-    >
+    <option v-for="(option, index) in options" :key="index" :value="option.value">
       {{ option.label }}
     </option>
   </select>
