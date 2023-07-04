@@ -19,7 +19,12 @@ export default defineComponent({
         America.
       </p>
 
-      <img class="about__image" src="@/assets/about-how-we-started.png" alt="How we started" />
+      <img
+        class="about__image"
+        src="@/assets/about-how-we-started.png"
+        alt="How we started"
+        loading="lazy"
+      />
 
       <div class="about__history">
         <p>

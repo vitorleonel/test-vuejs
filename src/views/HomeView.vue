@@ -29,7 +29,12 @@ export default defineComponent({
 <template>
   <DefaultLayout>
     <div class="home container">
-      <img class="home__banner" src="@/assets/home-banner.png" alt="Everything you need" />
+      <img
+        class="home__banner"
+        src="@/assets/home-banner.png"
+        alt="Everything you need"
+        loading="lazy"
+      />
 
       <nav class="home__categories">
         <RouterLink
