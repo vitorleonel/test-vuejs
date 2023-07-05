@@ -23,6 +23,7 @@ describe('Home', () => {
         cy.get('.product-modal__name-input').first().type(' Edited')
         cy.get('.product-modal__name-action').first().click()
 
+        // eslint-disable-next-line cypress/no-unnecessary-waiting
         cy.wait(100).then(() => {
           const newProductName = product.find('.product__name').text()
 

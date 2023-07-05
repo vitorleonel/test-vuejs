@@ -1,0 +1,25 @@
+@import url('//fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap');
+
+:root {
+  --background-color: #f8fafc;
+  --primary-color: #22c55e;
+  --primary-color-darker: #16a34a;
+  --dark-color: #0f172a;
+  --gray-color: #64748b;
+  --light-gray-color: #e2e8f0;
+  --white-color: #ffffff;
+  --danger-color: #dc2626;
+  --warning-color: #eab308;
+  --success-color: #22c55e;
+
+  --border-radius: 8px;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
