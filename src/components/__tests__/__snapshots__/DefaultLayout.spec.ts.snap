@@ -22,24 +22,18 @@ exports[`DefaultLayout > should render properly 1`] = `
       <nav
         data-v-51353816=""
       >
-        <router-link
+        <router-link-stub
           data-v-51353816=""
           to="/"
-        >
-          Home
-        </router-link>
-        <router-link
+        />
+        <router-link-stub
           data-v-51353816=""
           to="/shop"
-        >
-          Shop
-        </router-link>
-        <router-link
+        />
+        <router-link-stub
           data-v-51353816=""
           to="/about"
-        >
-          About us
-        </router-link>
+        />
       </nav>
     </div>
   </header>

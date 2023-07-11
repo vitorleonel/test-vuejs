@@ -22,24 +22,18 @@ exports[`HomeView > should render properly 1`] = `
       <nav
         data-v-51353816=""
       >
-        <router-link
+        <router-link-stub
           data-v-51353816=""
           to="/"
-        >
-          Home
-        </router-link>
-        <router-link
+        />
+        <router-link-stub
           data-v-51353816=""
           to="/shop"
-        >
-          Shop
-        </router-link>
-        <router-link
+        />
+        <router-link-stub
           data-v-51353816=""
           to="/about"
-        >
-          About us
-        </router-link>
+        />
       </nav>
     </div>
   </header>
@@ -63,70 +57,26 @@ exports[`HomeView > should render properly 1`] = `
         data-v-b4e148ca=""
       >
         
-        <routerlink
+        <router-link-stub
           class="home__category"
           data-v-b4e148ca=""
           to="/shop"
-        >
-          <h3
-            data-v-b4e148ca=""
-          >
-            Clothes
-          </h3>
-          <span
-            data-v-b4e148ca=""
-          >
-            The best clothes you can find on the internet
-          </span>
-        </routerlink>
-        <routerlink
+        />
+        <router-link-stub
           class="home__category"
           data-v-b4e148ca=""
           to="/shop"
-        >
-          <h3
-            data-v-b4e148ca=""
-          >
-            Electronics
-          </h3>
-          <span
-            data-v-b4e148ca=""
-          >
-            Exclusive prices on all kind of electronics
-          </span>
-        </routerlink>
-        <routerlink
+        />
+        <router-link-stub
           class="home__category"
           data-v-b4e148ca=""
           to="/shop"
-        >
-          <h3
-            data-v-b4e148ca=""
-          >
-            Automotive
-          </h3>
-          <span
-            data-v-b4e148ca=""
-          >
-            Everything you need for your car at a great price
-          </span>
-        </routerlink>
-        <routerlink
+        />
+        <router-link-stub
           class="home__category"
           data-v-b4e148ca=""
           to="/shop"
-        >
-          <h3
-            data-v-b4e148ca=""
-          >
-            Personal care
-          </h3>
-          <span
-            data-v-b4e148ca=""
-          >
-            Take care of yourself and on people you love
-          </span>
-        </routerlink>
+        />
         
       </nav>
     </section>
