@@ -5,38 +5,9 @@ exports[`DefaultLayout > should render properly 1`] = `
   data-v-app=""
 >
   
-  <header
-    class="header"
-    data-v-51353816=""
+  <styled-header-stub
     data-v-81cf18a8=""
-  >
-    <div
-      class="container"
-      data-v-51353816=""
-    >
-      <h1
-        data-v-51353816=""
-      >
-        BestBuy
-      </h1>
-      <nav
-        data-v-51353816=""
-      >
-        <router-link-stub
-          data-v-51353816=""
-          to="/"
-        />
-        <router-link-stub
-          data-v-51353816=""
-          to="/shop"
-        />
-        <router-link-stub
-          data-v-51353816=""
-          to="/about"
-        />
-      </nav>
-    </div>
-  </header>
+  />
   <main
     data-v-81cf18a8=""
   >

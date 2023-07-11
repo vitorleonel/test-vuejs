@@ -46,18 +46,26 @@ export default {
 <template>
   <div class="product" :title="product.name">
     <div class="product__header">
-      <img class="product__image" :src="parsedImage" :alt="product.name" loading="lazy" />
+      <img
+        class="product__image"
+        :src="parsedImage"
+        :alt="product.name"
+        loading="lazy"
+        data-test="product-image"
+      />
+
       <img
         v-if="product.onSale"
         src="@/assets/sale-icon.png"
         alt="Sale"
         class="product__sale"
         loading="lazy"
+        data-test="product-sale"
       />
     </div>
 
     <div class="product__content">
-      <h3 class="product__name">{{ product.name }}</h3>
+      <h3 class="product__name" data-test="product-name">{{ product.name }}</h3>
 
       <span
         :class="{
@@ -65,6 +73,7 @@ export default {
           'product__price--green': product.salePrice < 15,
           'product__price--red': product.salePrice > 50
         }"
+        data-test="product-price"
         >{{ formattedPrice }}</span
       >
     </div>
@@ -75,12 +84,14 @@ export default {
         variant="default"
         text="Select"
         @click="handleOnSelect"
+        data-test="product-action-select"
       />
       <StyledButton
         class="product__delete"
         variant="outlined"
         text="Delete"
         @click="handleOnDelete"
+        data-test="product-action-delete"
       />
     </div>
   </div>
