@@ -6,6 +6,8 @@ import StyledButton from '@/components/StyledButton.vue'
 import { formatPrice } from '@/shared/utils/format'
 import type { IAPIGetAllProduct } from '@/shared/interfaces/product'
 
+const DEFAULT_PRODUCT_IMAGE = '/images/default-product.png'
+
 export default {
   components: { StyledButton },
   props: {
@@ -28,7 +30,7 @@ export default {
     },
 
     parsedImage() {
-      return this.product.image || '/images/default-product.png'
+      return this.product.image || DEFAULT_PRODUCT_IMAGE
     }
   },
   methods: {
@@ -38,6 +40,10 @@ export default {
 
     handleOnDelete() {
       this.onDelete(this.product)
+    },
+
+    handleImageError(event: Event) {
+      ;(event.target as HTMLImageElement).src = DEFAULT_PRODUCT_IMAGE
     }
   }
 }
@@ -46,7 +52,14 @@ export default {
 <template>
   <div class="product" :title="product.name">
     <div class="product__header">
-      <img class="product__image" :src="parsedImage" :alt="product.name" loading="lazy" />
+      <img
+        class="product__image"
+        :src="parsedImage"
+        :alt="product.name"
+        loading="lazy"
+        @error="handleImageError"
+      />
+
       <img
         v-if="product.onSale"
         src="@/assets/sale-icon.png"
