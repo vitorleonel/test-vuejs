@@ -21,10 +21,12 @@ describe('ProductCard', () => {
       props: { product: testProduct, onSelect: mockOnSelect, onDelete: mockOnDelete }
     })
 
-    expect(wrapper.find('.product__name').text()).toBe(testProduct.name)
-    expect(wrapper.find('.product__price').text()).toBe(formatPrice(testProduct.salePrice))
-    expect(wrapper.find('.product__image').attributes()['src']).toBe(testProduct.image)
-    expect(wrapper.find('.product__sale').exists()).toBeFalsy()
+    expect(wrapper.find('[data-test="product-name"]').text()).toBe(testProduct.name)
+    expect(wrapper.find('[data-test="product-price"]').text()).toBe(
+      formatPrice(testProduct.salePrice)
+    )
+    expect(wrapper.find('[data-test="product-image"]').attributes()['src']).toBe(testProduct.image)
+    expect(wrapper.find('[data-test="product-sale"]').exists()).toBeFalsy()
   })
 
   it('should render a fallback image if none is passed', () => {
@@ -36,7 +38,9 @@ describe('ProductCard', () => {
       }
     })
 
-    expect(wrapper.find('.product__image').attributes()['src']).toBe('/images/default-product.png')
+    expect(wrapper.find('[data-test="product-image"]').attributes()['src']).toBe(
+      '/images/default-product.png'
+    )
   })
 
   it('should render a sale icon if product onSale is true', () => {
@@ -48,7 +52,7 @@ describe('ProductCard', () => {
       }
     })
 
-    expect(wrapper.find('.product__sale').exists()).toBeTruthy()
+    expect(wrapper.find('[data-test="product-sale"]').exists()).toBeTruthy()
   })
 
   it('should render a green price if product salePrice is lower than $15', () => {
@@ -60,7 +64,7 @@ describe('ProductCard', () => {
       }
     })
 
-    expect(wrapper.find('.product__price').classes()).contain('product__price--green')
+    expect(wrapper.find('[data-test="product-price"]').classes()).contain('product__price--green')
   })
 
   it('should render a red price if product salePrice is higher than $50', () => {
@@ -72,7 +76,7 @@ describe('ProductCard', () => {
       }
     })
 
-    expect(wrapper.find('.product__price').classes()).contain('product__price--red')
+    expect(wrapper.find('[data-test="product-price"]').classes()).contain('product__price--red')
   })
 
   it('should call "onSelect" when click on select button', () => {
@@ -80,7 +84,7 @@ describe('ProductCard', () => {
       props: { product: testProduct, onSelect: mockOnSelect, onDelete: mockOnDelete }
     })
 
-    wrapper.find('.product__select').trigger('click')
+    wrapper.find('[data-test="product-action-select"]').trigger('click')
 
     expect(mockOnSelect).toHaveBeenCalledOnce()
     expect(mockOnSelect).toBeCalledWith(testProduct)
@@ -91,7 +95,7 @@ describe('ProductCard', () => {
       props: { product: testProduct, onSelect: mockOnSelect, onDelete: mockOnDelete }
     })
 
-    wrapper.find('.product__delete').trigger('click')
+    wrapper.find('[data-test="product-action-delete"]').trigger('click')
 
     expect(mockOnDelete).toHaveBeenCalledOnce()
     expect(mockOnDelete).toBeCalledWith(testProduct)

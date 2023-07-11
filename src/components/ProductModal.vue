@@ -85,11 +85,17 @@ export default {
 
 <template>
   <div class="product-modal">
-    <div class="product-modal__overlay" @click="handleOnClose"></div>
+    <div
+      class="product-modal__overlay"
+      @click="handleOnClose"
+      data-test="product-modal-overlay"
+    ></div>
 
     <div class="product-modal__content">
       <div class="product-modal__header">
-        <h3 v-show="!isEditingName" class="product-modal__name">{{ productName }}</h3>
+        <h3 v-show="!isEditingName" class="product-modal__name" data-test="product-modal-name">
+          {{ productName }}
+        </h3>
 
         <InputField
           v-show="isEditingName"
@@ -141,14 +147,20 @@ export default {
       <div class="product-modal__body">
         <div v-if="product.genre">
           <h4>Genre:</h4>
-          <span class="product-modal__genre">{{ product.genre }}</span>
+          <span class="product-modal__genre" data-test="product-modal-genre">{{
+            product.genre
+          }}</span>
         </div>
 
         <div v-if="formattedPlot">
           <h4>Plot:</h4>
-          <p class="product-modal__plot">{{ formattedPlot }}</p>
+          <p class="product-modal__plot" data-test="product-modal-plot">{{ formattedPlot }}</p>
 
-          <button class="product-modal__plot-toggle" @click="showFullPlot = !showFullPlot">
+          <button
+            class="product-modal__plot-toggle"
+            @click="showFullPlot = !showFullPlot"
+            data-test="product-modal-plot-toggle"
+          >
             {{ showFullPlot ? ' [Read less]' : ' [Read more]' }}
           </button>
         </div>
@@ -161,21 +173,34 @@ export default {
               class="product-modal__shipping"
               v-for="(shippingService, index) in product.shippingLevelsOfService"
               :key="index"
+              data-test="product-modal-shipping"
             >
-              <span class="product-modal__shipping_name">{{
+              <span class="product-modal__shipping_name" data-test="product-modal-shipping-name">{{
                 shippingService.serviceLevelName
               }}</span>
-              <span class="product-modal__shipping_price">{{
-                formatPrice(shippingService.unitShippingPrice)
-              }}</span>
+              <span
+                class="product-modal__shipping_price"
+                data-test="product-modal-shipping-price"
+                >{{ formatPrice(shippingService.unitShippingPrice) }}</span
+              >
             </li>
           </ul>
         </div>
       </div>
 
       <div class="product-modal__actions">
-        <StyledButton class="product-modal__previous" text="Previous" @click="handleOnPrevius" />
-        <StyledButton class="product-modal__next" text="Next" @click="handleOnNext" />
+        <StyledButton
+          class="product-modal__previous"
+          text="Previous"
+          @click="handleOnPrevius"
+          data-test="product-modal-action-previous"
+        />
+        <StyledButton
+          class="product-modal__next"
+          text="Next"
+          @click="handleOnNext"
+          data-test="product-modal-action-next"
+        />
       </div>
     </div>
   </div>
