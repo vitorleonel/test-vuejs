@@ -1,9 +1,8 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineAsyncComponent, defineComponent } from 'vue'
 
 import DefaultLayout from '@/components/DefaultLayout.vue'
 import ProductCard from '@/components/ProductCard.vue'
-import ProductModal from '@/components/ProductModal.vue'
 import InputField from '@/components/InputField.vue'
 import SelectField, { type ISelectOption } from '@/components/SelectField.vue'
 
@@ -24,7 +23,13 @@ type IShopViewData = {
 }
 
 export default defineComponent({
-  components: { DefaultLayout, ProductCard, ProductModal, InputField, SelectField },
+  components: {
+    DefaultLayout,
+    ProductCard,
+    ProductModal: defineAsyncComponent(() => import('@/components/ProductModal.vue')),
+    InputField,
+    SelectField
+  },
   data(): IShopViewData {
     return {
       isLoading: false,
