@@ -10,9 +10,9 @@ export default defineComponent({})
       <h1>BestBuy</h1>
 
       <nav>
-        <router-link to="/">Home</router-link>
-        <router-link to="/shop">Shop</router-link>
-        <router-link to="/about">About us</router-link>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/shop">Shop</RouterLink>
+        <RouterLink to="/about">About us</RouterLink>
       </nav>
     </div>
   </header>

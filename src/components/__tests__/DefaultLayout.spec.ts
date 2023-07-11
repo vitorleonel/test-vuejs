@@ -8,7 +8,8 @@ describe('DefaultLayout', () => {
     const wrapper: VueWrapper = mount(DefaultLayout, {
       slots: {
         default: '<p>Test content</p>'
-      }
+      },
+      global: { stubs: ['RouterLink'] }
     })
 
     expect(wrapper.element).toMatchSnapshot()

@@ -5,7 +5,7 @@ import AboutView from '@/views/AboutView.vue'
 
 describe('AboutView', () => {
   it('should render properly', () => {
-    const wrapper: VueWrapper = mount(AboutView)
+    const wrapper: VueWrapper = mount(AboutView, { global: { stubs: ['RouterLink'] } })
 
     expect(wrapper.element).toMatchSnapshot()
   })

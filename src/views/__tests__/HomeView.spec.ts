@@ -5,7 +5,7 @@ import HomeView from '@/views/HomeView.vue'
 
 describe('HomeView', () => {
   it('should render properly', () => {
-    const wrapper: VueWrapper = mount(HomeView)
+    const wrapper: VueWrapper = mount(HomeView, { global: { stubs: ['RouterLink'] } })
 
     expect(wrapper.element).toMatchSnapshot()
   })
